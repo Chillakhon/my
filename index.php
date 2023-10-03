@@ -10,3 +10,4 @@ $user = new User();
 $book = new Books();
 $miss = new Miss();
 
+$book->test();
