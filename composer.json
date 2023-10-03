@@ -1,0 +1,17 @@
+{
+    "name": "sergeyandzarrin/my-framework",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "chollakhon",
+            "email": "shoev-03@mail.ru"
+        }
+    ],
+    "require": {
+
+    }
+}
