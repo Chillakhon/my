@@ -1,13 +1,17 @@
 <?php
-require_once "vendor/autoload.php";
+session_start();
 
-use App\Data\User;
-Use App\Data\Books\Books;
-Use App\Data\Books\Miss;
+spl_autoload_register(function ($class)
+{
+    $path = str_replace('\\','/',$class).'.php';
+    if (file_exists($path)) {
+        require_once $path;
+    }
 
+});
 
-$user = new User();
-$book = new Books();
-$miss = new Miss();
+use application\core\Router;
 
-$book->test();
+$router = new Router();
+
+$router->run();
