@@ -37,17 +37,17 @@ class Router
     public function run()
     {
         if ($this->match()){
-            $path = 'application\\controllers\\'. ucfirst($this-> params['controller']).'Controller';
+            $path = 'application\\controllers\\'. ucfirst($this->params['controller']).'Controller';
             if (class_exists($path)){
                 $action = $this->params['action'].'Action';
                 if (method_exists($path,$action)){
                     $controller = new $path($this->params);
                     $controller->$action();
                 }else{
-                    View::errorCode(404);
+                    View::errorCode(403);
                 }
             }else{
-                View::errorCode(404);
+                View::errorCode(403);
             }
         }else{
             View::errorCode(404);

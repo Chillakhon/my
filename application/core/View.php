@@ -28,8 +28,7 @@ class View extends Controller
     }
 
     public function redirect($url){
-        header('location:'.$url);
-        exit();
+        exit(json_encode(['url'=>$url]));
     }
 
     public static function errorCode($code)
@@ -37,6 +36,11 @@ class View extends Controller
         http_response_code($code);
         require_once "application/views/errors/" . $code . '.php';
         exit();
+    }
+
+    public function message($status,$message)
+    {
+        exit(json_encode(['status'=>$status,'message'=>$message]));
     }
 }
 

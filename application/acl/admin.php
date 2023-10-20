@@ -1,8 +1,7 @@
 <?php
-return [
+return[
     'all'=>[
         'login',
-        'register'
     ],
 
     'authorize'=>[
@@ -14,6 +13,10 @@ return [
     ],
 
     'admin'=>[
-        //
+        'logout',
+        'add',
+        'edit',
+        'delete',
+        'posts',
     ]
 ];

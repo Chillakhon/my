@@ -2,13 +2,7 @@
 
 namespace application\core;
 
-
-abstract class Model
+abstract class Model extends Db
 {
-    public $db;
 
-    public function __Construct()
-    {
-        $this->db = new Db();
-    }
 }
